@@ -1,0 +1,31 @@
+getprop("ro.product.device") == "cancro" || getprop("ro.product.device") == "omni_cancro"
+|| abort("This package is for \"cancro, omni_cancro\" devices; this is a \"" + getprop("ro.product.device") + "\".");
+
+ui_print("==================================");
+ui_print("     Firmware Files Miui 7        ");
+ui_print("        V7.5.1.0.MXDMIDE          ");
+ui_print("          By Irawan's             ");
+ui_print("         @dodyirawan85            ");
+ui_print("==================================");
+
+ui_print("Patching firmware images...");
+ui_print("Writing image emmc_appsboot.mbn...");
+package_extract_file("firmware-images/emmc_appsboot.mbn", "/dev/block/platform/msm_sdcc.1/by-name/aboot");
+ui_print("Writing image tz.mbn...");
+package_extract_file("firmware-images/tz.mbn", "/dev/block/platform/msm_sdcc.1/by-name/tz");
+ui_print("Writing image NON-HLOS.bin...");
+package_extract_file("firmware-images/NON-HLOS.bin", "/dev/block/platform/msm_sdcc.1/by-name/modem");
+ui_print("Writing image rpm.mbn...");
+package_extract_file("firmware-images/rpm.mbn", "/dev/block/platform/msm_sdcc.1/by-name/rpm");
+ui_print("Writing image sdi.mbn...");
+package_extract_file("firmware-images/sdi.mbn", "/dev/block/platform/msm_sdcc.1/by-name/dbi");
+ui_print("Writing image sbl1.mbn...");
+package_extract_file("firmware-images/sbl1.mbn", "/dev/block/platform/msm_sdcc.1/by-name/sbl1");
+ui_print("Writing image misc.img...");
+package_extract_file("firmware-images/misc.img", "/dev/block/platform/msm_sdcc.1/by-name/misc");
+ui_print("Writing image misc.img...");
+package_extract_file("firmware-images/persist.img", "/dev/block/platform/msm_sdcc.1/by-name/persist");
+
+ui_print("==================================");
+ui_print("               DONE               ");
+ui_print("==================================");
